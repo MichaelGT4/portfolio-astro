@@ -1,0 +1,21 @@
+---
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Skill from "@components/Skill.astro";
+import getUniqueSkills from "@utils/getUniqueSkills";
+import { SITE } from "@config";
+
+let skills = getUniqueSkills();
+---
+
+<Layout title={`Skills | ${SITE.title}`}>
+  <Header activeNav="skills" />
+  <Main pageTitle="Skills" pageDesc="All the technologies I've used.">
+    <ul>
+      {skills.map(({ skill }) => <Skill {skill} size="lg" />)}
+    </ul>
+  </Main>
+  <Footer />
+</Layout>

@@ -18,6 +18,9 @@ module.exports = {
     },
 
     extend: {
+      spacing: {
+        '49%': '49%'
+      },
       textColor: {
         skin: {
           base: withOpacity("--color-text-base"),
